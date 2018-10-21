@@ -1,0 +1,93 @@
+@import "../../variables";
+.thumb {
+    float: left;
+    padding-right: 5px;
+}
+
+.input {
+    width:400px !important;
+    float: left;
+    .textbox {
+        width:400px;
+    }
+    .btn {
+        margin-left: 10px;
+    }
+}
+
+.uploadedForm {
+    font-size: 10px;
+    color: $primary-text-color;
+
+    div {
+        float: left;
+    }
+    .files {
+        border: 1px solid $lighter-border-color;
+    }
+    .fileName {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .filedeleteOpt {
+        padding: 15px;
+
+        // label {
+        //     font-size: 10px;
+        //     color: #333;
+        // }
+    }
+}
+.thumb_image{
+    cursor: pointer;
+}
+img.cursor{
+    cursor: pointer;
+}@import "../../variables";
+.thumb {
+    float: left;
+    padding-right: 5px;
+}
+
+.input {
+    width: 400px !important;
+    float: left;
+    .textbox {
+        width: 400px;
+    }
+    .btn {
+        margin-left: 10px;
+    }
+}
+
+.uploadedForm {
+    font-size: 10px;
+    color: $primary-text-color;
+
+    div {
+        float: left;
+    }
+    .files {
+        border: 1px solid $lighter-border-color;
+    }
+    .fileName {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .filedeleteOpt {
+        padding: 15px;
+
+        // label {
+        //     font-size: 10px;
+        //     color: #333;
+        // }
+    }
+}
+.thumb_image{
+    cursor: pointer;
+}
+img.cursor{
+    cursor: pointer;
+}

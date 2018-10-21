@@ -1,0 +1,58 @@
+<div class="ui container">
+
+
+
+
+    <div class="ui horizontal section divider">{{boardKey}}</div>
+
+
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-4 col-xl-4" (click)="postDetail(item)" *ngFor="let item of listArray">
+            <mat-card class="contents-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{item.title}}</mat-card-title>
+                    <mat-card-subtitle>{{item.subtitle}}</mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <p>
+                        hello world
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <small>작성 시점 : {{item.input_ymd}}</small>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+
+        <!-- <div class="ui segment">
+            <div class="ui inverted dimmer">
+                <div class="ui text loader">Loading</div>
+            </div>
+            <p></p>
+            <p></p>
+        </div> -->
+
+
+        <!-- <mat-spinner *ngIf="loadingState"></mat-spinner> -->
+
+        <div *ngIf="loadingState" class="ui centered  billboard test ad" data-text="현재 이 카테고리는 준비중입니다. ^^">
+            
+        </div>
+
+        <div class="ui page dimmer">
+                <!-- <div class="ui text loader">Loading</div> -->
+            <div class="content">
+                    
+                현재 이 카테고리는 준비중입니다. ^^...
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

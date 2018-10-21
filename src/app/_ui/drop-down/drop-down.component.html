@@ -1,0 +1,13 @@
+<!-- <div class="ui selection dropdown " >
+  <input type="hidden" id="dropdownVal" (change)="checkVal($event)" >
+  <i class="dropdown icon"></i>
+  <div class="default text">{{items_default}}</div>
+  <div class="menu">
+      <div *ngFor="let item of items; let i = index" class="item" [attr.data-value]="item.key">{{item.name}}</div>
+  </div>
+</div> -->
+
+<select (change)="checkVal($event)" class="form-control">
+    <option value="" >{{items_default}}</option>
+  <option [value]="item.key" *ngFor="let item of items; let i = index">{{item.name}}</option>
+</select>

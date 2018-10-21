@@ -1,0 +1,123 @@
+<div class="categoryEditPage">
+  <table class="ui list">
+
+    <thead>
+      <tr>
+        <th>
+          No.
+        </th>
+        <th>대분류</th>
+        <th>중분류</th>
+        <th>이미지</th>
+        <th>제목</th>
+        <th>요약정보</th>
+      </tr>
+    </thead>
+    <tbody class="list">
+
+      <tr *ngIf="results.length == 0">
+        <td colspan="7" class="no-data">검색된 결과가 없습니다.</td>
+      </tr>
+
+      <tr *ngFor="let item of results; let i=index;" class="list_row" [ngClass]="item.odd_tag" (click)="edit(item)">
+
+        <td>{{i+1}}</td>
+        <td>{{item.lv1 == 1 ? 'Y' : 'N'}}</td>
+        <td>{{item.lv2 == 1 ? 'Y' : 'N'}}</td>
+        <td><img [src]="item.fullPath" alt="item.thumb"></td>
+        <td>{{item.title}}</td>
+        <td>{{item.subTitle}}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+
+  <div>
+    <div class="ui form">
+      <!-- <h4 class="ui dividing header">카테고리 정보</h4> -->
+      <div class="inline fields">
+        <label for="categoryS">카테고리 선택 : </label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="categoryS" [checked]="categoryModel.lv1 == '1'" tabindex="0" class="hidden" (change)="radioChk($event, 'main')">
+            <label>메인</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="categoryS" [checked]="categoryModel.lv2 == '1'" tabindex="0" class="hidden" (change)="radioChk($event, 'sub')">
+            <label>서브</label>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="categoryModel.lv1 == '0'" class="twelve wide field">
+        <select class="ui search dropdown" (change)="mainSelect($event)">
+          <option value="">대분류 선택</option>
+          <option *ngFor="let cat of mainCategoryGbn" [value]="cat.cpk">{{cat.title}}</option>
+          
+        </select>
+      </div>
+      <div class="field">
+        <label>타이틀</label>
+        <div class="fields">
+          <div class="twelve wide field">
+            <input type="text" placeholder="카테고리 명" [(ngModel)]="categoryModel.title">
+          </div>
+
+        </div>
+      </div>
+      <div class="field">
+        <label>서브타이틀</label>
+        <div class="fields">
+          <div class="twelve wide field">
+            <input type="text" placeholder="카테고리 서브타이틀" [(ngModel)]="categoryModel.subTitle">
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label>설명</label>
+        <textarea rows="2" [(ngModel)]="categoryModel.comment"></textarea>
+      </div>
+      <div class="imgForm">
+        <div class="field">
+          <app-file-uploader [fileId]="fileId1" [attachType]="fileId1" [uploadedfileInfo]="uploadedfileInfo1"
+            (chnagefilesize)="chnagefilesize_handler1($event)">
+          </app-file-uploader>
+        </div>
+      </div>
+
+      <div class="imgForm">
+        <div class="field">
+          <app-file-uploader [fileId]="fileId2" [attachType]="fileId2" [uploadedfileInfo]="uploadedfileInfo2"
+            (chnagefilesize)="chnagefilesize_handler1($event)">
+          </app-file-uploader>
+        </div>
+      </div>
+
+
+      <div class="buttonGbn center">
+        <button class="ui primary  button" (click)="save()">
+          저장
+        </button>
+        <button class="ui button" (click)="add()">
+          추가
+        </button>
+        <button  [disabled]="!deleteBtn" class="ui secondary button" (click)="delete()">
+            삭제
+        </button>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,88 @@
+@import "../../variables";
+.categoryEditPage{
+    table {
+        .odd {
+            background: rgb(247, 247, 247);
+        }
+        border-collapse: collapse;
+        width: 100%;
+        height: 200px;
+        display:block;
+        th:nth-child(1), td:nth-child(1) {width:10%}
+        th:nth-child(2), td:nth-child(2) {width:10%}
+        th:nth-child(3), td:nth-child(3) {width:10%}
+        th:nth-child(4), td:nth-child(4) {width:10%}
+        th:nth-child(5), td:nth-child(5) {width:100px;}
+        /** 나머지 width는 상품명(5번째 td)**/
+        th:nth-child(6), td:nth-child(6) {width:50%}
+        
+        th {
+            background-color: $lighter-border-color;
+            color: $primary-text-color;
+            // height: 38px;
+            // line-height: 38px;
+            text-align: center;
+            border: 1px solid $lighter-border-color;
+            font-weight: normal;
+        }
+        td {
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: $lighter-border-color;
+            // padding: 10px 5px;
+            text-align: center;
+            img {
+                width: 50px;
+            }
+            .icon{
+                color: $primary-color;
+                cursor: pointer;
+                font-size: 18px;
+            }
+        }
+        .no-data {
+            text-align: center;
+            padding: 50px;
+        }
+        thead{
+            border: 1px solid #ccc;
+            border-radius: 5px 5px 0 0;
+            display:block;
+        }
+        tbody{
+            border: 1px solid #ccc;
+            border-radius: 0 0 5px 5px;
+            height: 200px;
+            display: block;
+            overflow-y: scroll;
+            padding:0;
+        }
+    
+    }
+    .imgForm{
+        margin-bottom:60px;
+    }
+    
+    // .list {
+    //     position: relative;
+    //     width: 100%;
+    //     border-width: 0 1px;
+    //     border-style: solid;
+    //     border-color: $lighter-border-color;
+        
+        
+    // }
+    .buttonGbn{
+        margin-top:110px;
+        text-align:center;
+        
+    }
+
+
+
+    //정리
+    .form{
+        margin-top:50px;
+    }
+    
+}

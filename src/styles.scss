@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+//deeppurple-amber.css 
+//indigo-pink.css 
+//pink-bluegrey.css 
+//purple-green.css
+/** 이걸 넣지않으면 material design navigation이 살짝 뜸**/
+@import '~@angular/material/theming';
+@include mat-core();
+
+// $my-app-primary: mat-palette($mat-blue-grey);
+$my-app-primary: mat-palette($mat-teal);
+$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn:    mat-palette($mat-deep-orange);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);
+
+body {
+    
+    margin: 0;
+}

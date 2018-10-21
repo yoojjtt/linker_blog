@@ -1,0 +1,151 @@
+<div class="wrtierPage">
+
+    <div class="ui container">
+
+        <div class="container form ">
+
+
+
+
+            <div class="row">
+                <div class="form-group col-12 col-md-12">
+
+                    <button class="btn btn-secondary" (click)="openCategoryEdit()">카테고리 관리</button>
+
+
+                </div>
+                <div class="form-group col-12 col-md-3">
+
+                    <label for="wp_category">카테고리
+                        <!-- <span class="right floated time">
+                            <i class="add icon"></i>
+
+                        </span> -->
+
+
+                    </label>
+
+                    <select class="form-control" id="wp_category" (change)="changeCat($event)">
+                        <option value="">선택</option>
+                        <option [value]="main.cpk" *ngFor="let main of mainCategoryGbn">{{main.title}}</option>
+                        <!-- <option value="Programme">프로그램이야기</option>
+                        <option value="Language">언어이야기</option>
+                        <option value="FreeBoard">자유게시판</option>
+                        <option value="etc1">기타1</option> -->
+
+                    </select>
+                </div>
+                <div class="form-group col-12 col-md-3"  id="subCatBox">
+
+                    <label for="wp_subCategory">하위카테고리
+                        <span class="right floated time">
+                            <i class="add icon"></i>
+                        </span>
+                    </label>
+                    <select class="form-control" id="wp_subCategory" (change)="changeSubCat($event)">
+
+                        <option value="">선택</option>
+                        <option [value]="sub.cpk" *ngFor="let sub of subCategoryGbn">{{sub.title}}</option>
+                        <!-- <option value="Html">Html[관리자 Only]</option>
+                        <option value="Css">Css[관리자 Only]</option>
+                        <option value="Javascript">Javascript[관리자 Only]</option>
+                        <option value="Bootstrap">Bootstrap[관리자 Only]</option>
+                        <option value="Wordpress">Wordpress[관리자 Only]</option>
+                        <option value="Scss">Scss[관리자 Only]</option>
+                        <option value="Angular">Angular[관리자 Only]</option>
+                        <option value="Nodejs">NodeJs[관리자 Only]</option>
+                        <option value="Php">Php[관리자 Only]</option>
+                        <option value="Mysql">Mysql[관리자 Only]</option>
+                        <option value="Flutter">Flutter[관리자 Only]</option>
+                        <option value="Kotlin">Kotlin[관리자 Only]</option>
+                        <option value="Android">Android[관리자 Only]</option>
+                        <option value="Blender">Blender[관리자 Only]</option>
+                        <option value="Unity">Unity[관리자 Only]</option> -->
+
+                    </select>
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="wp_writer">작성자
+                        <span class="right floated time">
+                            <i class="meh icon"></i>
+                        </span>
+
+                    </label>
+                    <input type="text" class="form-control" id="wp_writer" autocomplete="off" placeholder="이름">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="wp_editPwd">수정 비밀번호
+
+                        <span class="right floated time">
+                            <i class="lock icon"></i>
+                        </span>
+
+
+
+
+                    </label>
+                    <input type="password" class="form-control" id="wp_editPwd" autocomplete="off" placeholder="수정비밀번호">
+                </div>
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group col-12 col-md-6">
+                    <div class="ui form">
+                        <label for="wp_title">제목</label>
+                        <input type="text" class="form-control" id="wp_title" autocomplete="off" placeholder="제목">
+                    </div>
+                </div>
+                <div class="form-group col-12 col-md-12">
+                    <div class="ui form">
+                        <div class="field">
+                            <label for="wp_srcWord">검색 태그 정보</label>
+                            <textarea class="form-control" id="wp_srcWord" placeholder="구분자를 , 로 키워드를 작성해 주세요."
+                                autocomplete="off" rows="2"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="form-group col-12 col-md-12">
+                    <div class="ui form">
+                        <div class="field">
+                            <label for="wp_subTitle">요약정보</label>
+                            <textarea class="form-control" id="wp_subTitle" autocomplete="off" rows="2"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+
+                <div class="ui form">
+                    <div class="field">
+                        <label for="wp_contents">글작성</label>
+                        <textarea class="form-control" rows="300" id="wp_contents"></textarea>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+            <button type="button " class="btn btn-danger customSubmitBtn" (click)="submit()">제출</button>
+
+        </div>
+
+    </div>
+
+
+</div>

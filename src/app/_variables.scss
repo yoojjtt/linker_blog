@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+// Copy the palettes from your selected theme (usually theme.scss).
+
+
+$app-primary:  mat-palette($mat-teal);
+$app-accent:  mat-palette($mat-light-blue);
+$app-warn:    mat-palette($mat-pink);
+
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+
+
+/** 보더 컬러 **/
+$lighter-border-color:#e8e8e8;
+$grey-border-color:#898989;
+$lightgrey-border-color: #c3c3c3;
+/** 기본/대표 컬러 **/
+$primary-color: #03b4b7;
+/** 텍스트 컬러  **/
+$primary-text-color : #252525;
+$grey-text-color: #8c8c8c;
+$lightgrey-text-color: #b7b7b7;

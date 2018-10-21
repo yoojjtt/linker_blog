@@ -1,0 +1,18 @@
+<!-- 카테고리 드롭다운 -->
+
+
+<div class="box">
+
+    <div class="group">
+        <!-- <app-group-combo #groupDrop [optionData]="optionData" (changeCategroy)="changeCategroy_handler($event)"></app-group-combo> -->
+    </div>
+    <div class="group">
+        <app-group-combo2 #groupDrop2 [optionData]="optionData" (changeCategroy)="changeCategroy_handler2($event)"></app-group-combo2>
+    </div>
+
+
+
+    <button mat-raised-button color="warn" (click)="onInitialize()">초기화</button>
+    <button mat-raised-button color="primary" (click)="bigCat()">대분류 로드</button>
+
+</div>

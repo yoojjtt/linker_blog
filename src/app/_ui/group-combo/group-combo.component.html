@@ -1,0 +1,39 @@
+<!-- 카테고리 콤보 모음 -->
+
+<div class="category-box-row">
+    <div class="category-box-item">
+        <app-drop-down 
+            
+            [items]="items1" 
+            [items_default]="items1_default"
+            #drop1
+            (changeSelctedValue)="changeSelctedValue1_handler($event)">
+        </app-drop-down>
+    </div>
+    <div class="category-box-item">
+        <app-drop-down 
+            
+            [items]="items2" 
+            [items_default]="items2_default"
+            #drop2
+            (changeSelctedValue)="changeSelctedValue2_handler($event)">
+        </app-drop-down>
+    </div>
+    <div class="category-box-item">
+        <app-drop-down 
+            
+            [items]="items3" 
+            [items_default]="items3_default"
+            #drop3
+            (changeSelctedValue)="changeSelctedValue3_handler($event)"></app-drop-down>
+    </div>
+    <div class="category-box-item">
+        <app-drop-down 
+            
+            [items]="items4"
+            [items_default]="items4_default"
+            #drop4
+            (changeSelctedValue)="changeSelctedValue4_handler($event)"></app-drop-down>
+    </div>
+    <div class="clear-fix"></div>
+</div>

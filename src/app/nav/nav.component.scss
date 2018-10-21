@@ -1,0 +1,56 @@
+
+@import '../variables';
+
+.app-main {
+    button {
+        //sfont-family: 'Do Hyeon', sans-serif;
+        font-weight: 600;
+    }
+    .app-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2; // mobile 에서 사라지게
+        .logo button {
+            font-family: 'Unlock', cursive;
+            font-size: 20px; // text-shadow: 2px 2px 2px rgb(137, 206, 225);
+        }
+        @media (max-width: 768px) {
+            .logo button{
+                font-family: 'Unlock', cursive;
+                font-size: 20px; // text-shadow: 2px 2px 2px rgb(137, 206, 225);
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .nav-text {
+            display: none;
+        }
+    }
+    .custom-spacer {
+        flex: 1 1 auto;
+    }
+    .btn-texs {
+        margin-left: 30px;
+    }
+    .main-contents {
+        margin-top: 100px;
+    }
+    .sidenav {
+        width: 230px;
+    }
+    .mat-nav-list {
+        padding: 0;
+    }
+    .item {
+        border-bottom: 1px solid #ccc;
+        font-weight: 700;
+    }
+    .mat-list-item:hover{
+        color: $primary;
+    }
+    .mat-list-item{
+        height:30px;
+    }
+}

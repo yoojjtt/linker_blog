@@ -1,0 +1,16 @@
+.container {
+    margin:50px;
+    display: flex;
+    flex-direction: column;
+    textarea{
+        height: 200px;
+    }
+    .button-row button,
+    .button-row a {
+        margin-right: 8px;
+    }
+}
+
+.container>* {
+    width: 100%;
+}

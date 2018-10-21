@@ -1,0 +1,148 @@
+<div class="app-main">
+
+
+    <mat-sidenav-container class="sidenav-container ">
+        <mat-sidenav #drawer class="sidenav mat-elevation-z8">
+            <mat-toolbar color="primary">메뉴</mat-toolbar>
+            <mat-nav-list>
+                <span class="item">
+                    
+                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+                        
+                        <mat-expansion-panel-header>
+                            
+                            <mat-panel-title [routerLink]="['/category']" (click)="drawer.toggle()">
+                                프로그램 이야기
+                            </mat-panel-title>
+                            
+                        </mat-expansion-panel-header>
+
+                        <!-- contents -->
+                        <mat-list dense role="list">
+                            <mat-list-item [routerLink]="['/board/Programme/Html']" role="listitem"  (click)="drawer.toggle()">
+                                Html
+                            </mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Css']" role="listitem"  (click)="drawer.toggle()">Css</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Javascript']" role="listitem"  (click)="drawer.toggle()">Javascript</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Bootstrap']" role="listitem"  (click)="drawer.toggle()">Bootstrap</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Wordpress']" role="listitem"  (click)="drawer.toggle()">Wordpress</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Scss']" role="listitem"  (click)="drawer.toggle()">Scss</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Angular']" role="listitem"  (click)="drawer.toggle()">Angular</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Nodejs']" role="listitem"  (click)="drawer.toggle()">NodeJs</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Php']" role="listitem"  (click)="drawer.toggle()">Php</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Mysql']" role="listitem"  (click)="drawer.toggle()">Mysql</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Flutter']" role="listitem"  (click)="drawer.toggle()">Flutter</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Kotlin']" role="listitem"  (click)="drawer.toggle()">Kotlin</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Android']" role="listitem"  (click)="drawer.toggle()">Android</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Blender']" role="listitem"  (click)="drawer.toggle()">Blender</mat-list-item>
+                            <mat-list-item [routerLink]="['/board/Programme/Unity']" role="listitem"  (click)="drawer.toggle()">Unity</mat-list-item>
+                        </mat-list>
+
+                    </mat-expansion-panel>
+
+                </span>
+                <span class="item">
+                    
+                        <mat-expansion-panel disabled hideToggle>
+                            
+                            <mat-expansion-panel-header>
+                                
+                                <mat-panel-title [routerLink]="['/encategory']" (click)="drawer.toggle()">
+                                    영어 이야기
+                                </mat-panel-title>
+                                
+                            </mat-expansion-panel-header>
+    
+                            <!-- contents -->
+                            
+                            
+                        </mat-expansion-panel>
+    
+                </span>
+
+                <span class="item">
+                    
+                        <mat-expansion-panel disabled hideToggle>
+                            
+                            <mat-expansion-panel-header>
+                                
+                                <mat-panel-title [routerLink]="['/freeBoard']" (click)="drawer.toggle()">
+                                    자유 게시판
+                                </mat-panel-title>
+                                
+                            </mat-expansion-panel-header>
+    
+                            <!-- contents -->
+                            
+                            
+                        </mat-expansion-panel>
+    
+                </span>
+                <span class="item">
+                    
+                        <mat-expansion-panel disabled hideToggle>
+                            
+                            <mat-expansion-panel-header>
+                                
+                                <mat-panel-title [routerLink]="['/contact']" (click)="drawer.toggle()">
+                                    <h6 class="mdc-typography--headline1">문의하기</h6>
+                                </mat-panel-title>
+                                
+                            </mat-expansion-panel-header>
+    
+                            <!-- contents -->
+                            
+                            
+                        </mat-expansion-panel>
+    
+                </span>
+
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <mat-toolbar class="app-navbar mat-elevation-z8" color="primary">
+                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="upScroll()" (click)="drawer.toggle()">
+                    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                </button>
+                <span class="logo" [routerLink]="['/']">
+                    <button mat-button>LINKER's Blog</button>
+                    
+                </span>
+
+                <div class="button-row nav-text">
+                    <button mat-button [routerLink]="['/category']">프로그램 이야기</button>
+                    <button mat-button [routerLink]="['/encategory']">언어 이야기</button>
+                    <button mat-button [routerLink]="['/freeBoard']">자유게시판</button>
+                    <button mat-button [routerLink]="['/contact']" color="accent">문의</button>
+
+
+                </div>
+
+                <span class="custom-spacer"></span>
+                <div class="right-btn-group">
+                    <button mat-icon-button>
+                        <mat-icon>account_circle </mat-icon>
+                    </button>
+
+                    <button mat-icon-button color="accent" [routerLink]="['/write']">
+                        <mat-icon >edit </mat-icon>
+
+                    </button>
+                </div>
+
+
+            </mat-toolbar>
+            <!-- Add Content Here -->
+            <div class="main-contents">
+                <router-outlet></router-outlet>
+            </div>
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+
+
+
+
+
+</div>

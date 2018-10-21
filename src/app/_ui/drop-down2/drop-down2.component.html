@@ -1,0 +1,30 @@
+<!-- <div class="ui selection dropdown " >
+  <input type="hidden" id="dropdownVal" (change)="checkVal($event)" >
+  <i class="dropdown icon"></i>
+  <div class="default text">{{items_default}}</div>
+  <div class="menu">
+      <div *ngFor="let item of items; let i = index" class="item" [attr.data-value]="item.key">{{item.name}}</div>
+      <div class="item" >1</div>
+      <div class="item" >2</div>
+      <div class="item" >3</div>
+      <div class="item" >4</div>
+      <div class="item" >5</div>
+  </div>
+</div> -->
+<!-- 
+<div class="ui selection dropdown" id="search-select2">
+  <input type="hidden" name="gender">
+  <i class="dropdown icon"></i>
+  <div class="default text">Gender</div>
+  <div class="menu">
+    <div class="item" data-value="1">Male</div>
+    <div class="item" data-value="0">Female</div>
+  </div>
+</div> -->
+
+<select  (change)="checkVal($event)" class="ui search selection dropdown" id="search-select">
+  <option value="">{{items_default}}</option>
+  <option *ngFor="let item of items; let i = index" class="item" [value]="item.key" >{{item.name}}</option>
+  
+</select>
+

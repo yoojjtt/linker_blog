@@ -1,0 +1,35 @@
+
+<!-- *업로드전 -->
+<div *ngIf="!uploadedfileInfo">
+    <div class="thumb">
+        <img [src]="fileSrc" [ngClass]="fileLoaded == true ? 'cursor': ''" width="38" height="38" (click)="detailImage()"/>
+    </div>
+    
+    <form name="form" action="" method="POST" enctype="multipart/form-data">
+
+        <div class="ui input">
+            <input type="text" [(ngModel)]="fileName" name="input_dp" class="col textbox" readonly placeholder="이미지 등록">
+            <input type='file' [id]="fileId" name="uploaded_file" hidden (change)="onFileChange($event)" />
+            <button class="btn btn-medium btn-white" (click)="fileUpload()">파일첨부</button>
+        </div>
+
+    </form>
+
+</div>
+
+<!-- *업로드 후의 모습 : 파명이 있을때 처리 -->
+<div class="uploadedForm" *ngIf="uploadedfileInfo">
+    <div class="files">
+
+        <img class="thumb_image" (click)="detailImage()" [src]="uploadedfileInfo.fileSrc" width="38" height="38" />
+
+    </div>
+    <div class="fileName">{{uploadedfileInfo.fileName}}</div>
+    <div class="filedeleteOpt">
+        <div class="ui child checkbox">
+            <input type="checkbox" (change)="select_del($event)">
+            <label>삭제</label>
+        </div>
+    </div>
+</div>
+

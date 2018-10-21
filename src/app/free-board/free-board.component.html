@@ -1,0 +1,61 @@
+<div class="ui text container">
+
+    <div class="realContents" *ngIf="!loadingState">
+
+        <div class="ui middle aligned divided list">
+            <div class="item"  *ngFor="let item of listArray">
+                <!-- <div class="left floated content">
+                    <div class="ui button">view</div>
+                    <div class="ui button">view</div>
+                    <div class="ui button">view</div>
+                </div> -->
+                <div class="floated content contentBox " (click)="postDetail(item)">
+
+                    <!-- <mat-icon class="custom-icon">account_circle</mat-icon> -->
+                    <h4>{{item.title}}</h4>
+                    <div class="content">
+                        {{item.title}} {{item.subtitle}}
+                    </div>
+
+
+                </div>
+
+                <!-- <div class="left floated content">
+                    <button mat-icon-button (click)="answer(item)">220
+                        <mat-icon color="basic">chat_bubble</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="view(item)">230
+                        <mat-icon color="basic">visibility</mat-icon>
+                    </button>
+                </div> -->
+                <div class="right floated content">
+                    <div class="ui label">
+                        <mat-icon color="basic">visibility</mat-icon> 2300
+                    </div>
+                    <div class="ui label">
+                        <mat-icon color="basic">chat_bubble</mat-icon> 23
+                    </div>
+                    <div class="ui label editBtn">
+                    
+                            <mat-icon color="basic" (click)="edit(item)">mode_edit</mat-icon>
+                    
+                    </div>
+
+                    <!-- <div class="ui button">view</div>
+                        <div class="ui button">view</div>
+                        <div class="ui button">view</div> -->
+                </div>
+                <!-- <img class="ui avatar image" src="/images/avatar2/small/lena.png"> -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="post-preview" *ngIf="!loadingState && listArray.length == 0">아직작성된 글이 없습니다</div>
+
+
+    <mat-spinner *ngIf="loadingState"></mat-spinner>
+
+</div>
